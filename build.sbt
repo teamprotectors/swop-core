@@ -11,6 +11,8 @@ lazy val commonSettings = Seq(
         "confluent" at "https://packages.confluent.io/maven/"
       ),
   libraryDependencies ++= Dependencies.common ++ Dependencies.test,
+  dockerRepository := Some("registry.gitlab.com/gsissa/image-registry-repo"),
+  daemonUser in Docker := "daemon",
   addCompilerPlugin("org.typelevel" %% "kind-projector"     % "0.10.3"),
   addCompilerPlugin("com.olegpy"    %% "better-monadic-for" % "0.3.1")
 )
@@ -23,10 +25,12 @@ lazy val `product-catalog` = project
   .configs(IntegrationTest)
   .settings(
     commonSettings,
+    dockerExposedPorts := Seq(8085),
     name += "-product-catalog",
     mainClass in Compile := Option("co.protectors.product.catalog.ports.http.Main"),
     testSettings
   )
+  .enablePlugins(JavaAppPackaging)
 
 lazy val users = project
   .configs(IntegrationTest)
