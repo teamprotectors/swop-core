@@ -21,5 +21,4 @@ object Transactor {
                      blocker = Blocker.liftExecutionContext(transactionEC)
                    )
     } yield transactor
-
 }
