@@ -24,7 +24,7 @@ lazy val `product-catalog` = project
   .settings(
     commonSettings,
     name += "-product-catalog",
-    mainClass in Compile := Option("co.protectors.Main"),
+    mainClass in Compile := Option("co.protectors.product.catalog.ports.http.Main"),
     testSettings
   )
 
