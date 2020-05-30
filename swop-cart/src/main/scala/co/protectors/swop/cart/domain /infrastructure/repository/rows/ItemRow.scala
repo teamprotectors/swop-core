@@ -3,7 +3,7 @@ package co.protectors.swop.cart.domain .infrastructure.repository.rows
 import java.time.ZonedDateTime
 import java.util.UUID
 
-import co.protectors.swop.cart.domain.item.CartShop
+import co.protectors.swop.cart.domain.item.{CartShop, Item}
 
 case class ItemRow (
                      idItem:UUID,
@@ -27,4 +27,19 @@ object ItemRow  {
         showDate = item.showDate,
         idCart = cartShop.idCart
     ))
+
+  def toDomainList (items: List[ItemRow], itemWish : List[ItemWishRow]): Seq[Item] = {
+    items.map(
+      item =>
+        Item(
+          id = item.idItem,
+          name = item.name,
+          quantity = item.quantity,
+          isInterchangeable = item.isInterchangeable,
+          requestDate = item.requestDate,
+          showDate = item.showDate,
+          wishItems = itemWish.map(ItemWishRow.toDomain(_))
+        )
+    )
+  }
 }

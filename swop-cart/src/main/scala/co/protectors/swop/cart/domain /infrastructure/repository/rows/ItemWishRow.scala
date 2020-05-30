@@ -2,7 +2,7 @@ package co.protectors.swop.cart.domain .infrastructure.repository.rows
 
 import java.util.UUID
 
-import co.protectors.swop.cart.domain.item.Item
+import co.protectors.swop.cart.domain.item.{Item, ItemToChange}
 
 final case class ItemWishRow(
                                id: UUID,
@@ -21,5 +21,12 @@ object ItemWishRow {
           idItem = itemDomain.id
         )
     }
+
+  def toDomain(item:  ItemWishRow) =
+      ItemToChange(
+        id =  item.id,
+        name = item.name,
+        category = item.category
+      )
 }
 
