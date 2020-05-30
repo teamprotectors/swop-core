@@ -1,15 +1,20 @@
 package co.protectors.product.catalog.domain.adapters
 
-import co.protectors.product.catalog.domain.item.Item
+import cats.effect.Effect
+import co.protectors.product.catalog.domain.infrastructure.repository.InMemoryRepository
 import co.protectors.product.catalog.domain.item.algebras.ItemAlg
+import doobie.util.transactor.Transactor
 
-final class LiveItemRepository[F[_]: ItemAlg] private {
+trait Repository[F[_]] {
+  def itemRepository: ItemAlg[F]
+}
 
-  def getAll: F[List[Item]]       = ItemAlg[F].getAll
-  def create(item: Item): F[Item] = ItemAlg[F].create(item)
+final class LiveItemRepository[F[_]] private (repo: ItemAlg[F]) extends Repository[F] {
+  override def itemRepository: ItemAlg[F] = repo
 }
 
 object LiveItemRepository {
-  def apply[F[_]: ItemAlg]: LiveItemRepository[F] = new LiveItemRepository[F]
+  def apply[F[_]: Effect](xa: Transactor[F]): LiveItemRepository[F] =
+    new LiveItemRepository[F](InMemoryRepository[F](xa))
 
 }

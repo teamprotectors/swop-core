@@ -11,7 +11,7 @@ import doobie.util.transactor.Transactor
 import henkan.convert.Syntax._
 
 class InMemoryRepository[F[_]: Sync](xa: Transactor[F]) extends  UserAlg[F]{
-  override def get(id: String): F[User] = UserSQL.get(id).map(_.to[User])
+  override def get(id: String): F[User] = UserSQL.get(id).unique.transact(xa).map(_.to[User])
 
   override def create(user: User): F[User] =
   UserSQL.insert(user.to[UserRow]()).run.transact(xa).map(_ => user)
