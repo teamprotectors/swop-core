@@ -1,13 +1,19 @@
 package co.protectors.user.domain.adapters
 
-import co.protectors.user.domain.user.User
+import cats.effect.Effect
+import co.protectors.user.domain.infraestructure.reprositorio.InMemoryRepository
 import co.protectors.user.domain.user.algebras.UserAlg
+import doobie.util.transactor.Transactor
 
-final class LiveUserRepository[F[_]:UserAlg] private {
+trait Repository[F[_]] {
+  def userRepository: UserAlg[F]
+}
 
-  def get(id:String):F[User] =UserAlg[F].get(id)
-  def create(user:User):F[User] =UserAlg[F].create(user)
+
+final class LiveUserRepository[F[_]] private (repo: UserAlg[F]) extends Repository[F] {
+override def userRepository  =repo
 }
 object LiveUserRepository{
-  def apply[F[_]:UserAlg]: LiveUserRepository[F] = new LiveUserRepository[F]
+  def apply[F[_]: Effect](xa: Transactor[F]): LiveUserRepository[F] =
+    new LiveUserRepository[F](InMemoryRepository[F](xa))
 }

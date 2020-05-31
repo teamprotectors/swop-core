@@ -1,6 +1,6 @@
 package co.protectors.user.domain.infraestructure.reprositorio.row
 
-import co.protectors.user.domain.user.Location
+import java.util.UUID
 
 case class UserRow(
     age: Int,
@@ -8,5 +8,5 @@ case class UserRow(
     occupation: String,
     userName: String,
     typeId: String,
-    location: Location
+    idLocation: UUID
 )

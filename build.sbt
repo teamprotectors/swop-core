@@ -33,7 +33,7 @@ lazy val users = project
   .settings(
     commonSettings,
     libraryDependencies ++= Dependencies.test,
-    mainClass in Compile := Option("co.protectors.Main"),
+    mainClass in Compile := Option("co.protectors.user.ports.http.Main"),
     name += "-users",
     testSettings
   )
