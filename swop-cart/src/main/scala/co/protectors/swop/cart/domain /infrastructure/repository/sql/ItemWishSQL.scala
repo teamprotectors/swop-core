@@ -8,7 +8,8 @@ import doobie.postgres.implicits._
 
 object ItemWishSQL {
   def insert(cartShop: ItemWishRow): doobie.Update0 =
-    sql"""INSERT INTO ITEM_WISH (idItemWish, name, category, itemId) VALUES(${cartShop.id},${cartShop.name},${cartShop.category}, ${cartShop.idItem})""".update
+    sql"""INSERT INTO ITEM_WISH (idItemWish, name, category, itemId)
+         VALUES(${cartShop.id},${cartShop.name},${cartShop.category}, ${cartShop.idItem})""".update
 
   def getByIdItem(idItem: UUID): doobie.ConnectionIO[List[ItemWishRow]] =
     sql"""SELECT idItemWish, name, category, itemId

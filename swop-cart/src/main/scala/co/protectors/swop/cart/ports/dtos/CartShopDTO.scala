@@ -10,7 +10,7 @@ import io.circe.{Decoder, Encoder}
 import org.http4s.circe.{jsonEncoderOf, jsonOf}
 import org.http4s.{EntityDecoder, EntityEncoder}
 
-case class CartShopDTO (idCart: Option[UUID], idUser: UUID, items: List[ItemDTO])
+case class CartShopDTO (idCart: Option[UUID], idUser: String, items: List[ItemDTO])
 
 object CartShopDTO {
   def apply(dto: CartShopDTO): CartShop = {

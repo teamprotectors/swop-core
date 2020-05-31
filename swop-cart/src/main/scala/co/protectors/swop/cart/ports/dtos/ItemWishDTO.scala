@@ -13,7 +13,6 @@ final case class ItemWishDTO(  id: UUID,
                                category: String
                             )
  object ItemWishDTO {
-
   implicit val itemWishDecoder: Decoder[ItemWishDTO] = deriveDecoder[ItemWishDTO]
   implicit val itemWishEncoder: Encoder.AsObject[ItemWishDTO] = deriveEncoder[ItemWishDTO]
   implicit def itemWishListDTOEncoder[F[_]: Sync]: EntityEncoder[F, List[ItemWishDTO]] =
@@ -21,5 +20,4 @@ final case class ItemWishDTO(  id: UUID,
 
    implicit def itemWishListDTOEncoderList[F[_]: Sync]: EntityEncoder[F, ItemWishDTO] =
      jsonEncoderOf[F, ItemWishDTO]
-
 }

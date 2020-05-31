@@ -9,7 +9,8 @@ import doobie.implicits.javatime._
 
 object ItemSQL {
   def insert(cartShop: ItemRow): doobie.Update0 =
-    sql"""INSERT INTO ITEM_CART (idItem, name, quantity, isInterchangeable, requestDate, showDate, idCart) VALUES(${cartShop.idItem},${cartShop.name},
+    sql"""INSERT INTO ITEM_CART (idItem, name, quantity,
+           isInterchangeable, requestDate, showDate, idCart) VALUES(${cartShop.idItem},${cartShop.name},
           ${cartShop.quantity},${cartShop.isInterchangeable},${cartShop.requestDate},
           ${cartShop.showDate},
           ${cartShop.idCart})""".update
