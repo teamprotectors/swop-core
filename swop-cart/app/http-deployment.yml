@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swop-cart-http
+spec:
+  selector:
+    matchLabels:
+      app: swop-cart-http
+  template:
+    metadata:
+      labels:
+        app: swop-cart-http
+    spec:
+      containers:
+        - name: swop-cart-http
+          image: registry.gitlab.com/gsissa/image-registry-repo/swop-cart:0.1.0-SNAPSHOT
+      imagePullSecrets:
+        - name: gitlab-registry
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: swop-cart-http-svc
+spec:
+  selector:
+    app: swop-cart-http
+  ports:
+    - protocol: TCP
+      port: 8086
+

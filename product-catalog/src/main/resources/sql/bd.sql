@@ -6,19 +6,88 @@ CREATE TABLE IF NOT EXISTS ITEM
     PRIMARY KEY (ID)
 );
 
-INSERT INTO ITEM (ID, NAME, CATEGORY)
-VALUES ('112e1e72-e408-4935-a040-b4baf2562fe8', 'item-sample', 'Food');
-INSERT INTO ITEM (ID, NAME, CATEGORY)
-VALUES ('1108bcf0-f19e-47c7-87a7-efa9344447b4', 'Pan Integral', 'Food');
-INSERT INTO ITEM (ID, NAME, CATEGORY)
-VALUES ('d3f9eb5c-8309-4ff3-9edb-b43db2892deb', 'Lentejas', 'Food');
-INSERT INTO ITEM (ID, NAME, CATEGORY)
-VALUES ('2615ac1d-d9be-4ab8-abc6-e6d6383c8399', 'Salmon', 'Food');
-INSERT INTO ITEM (ID, NAME, CATEGORY)
-VALUES ('4fbf834e-e3d5-4a45-a7b7-6e754f552daa', 'papel para baño en rollo familia', 'Food');
-INSERT INTO ITEM (ID, NAME, CATEGORY)
-VALUES ('65785911-4bcd-4c95-af1a-4869da687e82', 'colgate sensitive pro alivio', 'Aseo');
-INSERT INTO ITEM (ID, NAME, CATEGORY)
-VALUES ('65785911-4bcd-4c95-af1a-4869da687e93', 'Jabon baño', 'Aseo');
-INSERT INTO ITEM (ID, NAME, CATEGORY)
-VALUES ('65785911-4bcd-4c95-af1a-4869da687e94', 'Alcohol', 'Aseo');
+INSERT INTO ITEM (ID, NAME, CATEGORY) VALUES ('112e1e72-e408-4935-a040-b4baf2562fe8', 'item-sample', 'Food');
+INSERT INTO ITEM (ID, NAME, CATEGORY) VALUES ('1108bcf0-f19e-47c7-87a7-efa9344447b4', 'Pan Integral', 'Food');
+INSERT INTO ITEM (ID, NAME, CATEGORY) VALUES ('d3f9eb5c-8309-4ff3-9edb-b43db2892deb', 'Lentejas', 'Food');
+INSERT INTO ITEM (ID, NAME, CATEGORY) VALUES ('2615ac1d-d9be-4ab8-abc6-e6d6383c8399', 'Salmon', 'Food');
+INSERT INTO ITEM (ID, NAME, CATEGORY) VALUES ('4fbf834e-e3d5-4a45-a7b7-6e754f552daa', 'papel para baño en rollo familia', 'Food');
+INSERT INTO ITEM (ID, NAME, CATEGORY) VALUES ('65785911-4bcd-4c95-af1a-4869da687e82', 'colgate sensitive pro alivio', 'Aseo');
+INSERT INTO ITEM (ID, NAME, CATEGORY) VALUES ('65785911-4bcd-4c95-af1a-4869da687e93', 'Jabon baño', 'Aseo');
+INSERT INTO ITEM (ID, NAME, CATEGORY) VALUES ('65785911-4bcd-4c95-af1a-4869da687e94', 'Alcohol', 'Aseo');
+
+insert into ITEM (ID, NAME, CATEGORY) values ('05ae9422-dfc0-4789-a7e7-11ab4b714e02', 'Beets', 'Baby');
+insert into ITEM (ID, NAME, CATEGORY) values ('c7c2570d-1251-46c6-8f22-bf6e02dc37b0', 'Syrup - Monin - Blue Curacao', 'Jewelery');
+insert into ITEM (ID, NAME, CATEGORY) values ('d5f9d003-a7b1-4082-8c91-f06a117f755e', 'Glaze - Apricot', 'Tools');
+insert into ITEM (ID, NAME, CATEGORY) values ('7e442baf-257f-4cd5-b744-063e4d7f4333', 'Soup - Campbells Beef Noodle', 'Automotive');
+insert into ITEM (ID, NAME, CATEGORY) values ('6293d0b3-dbad-4cfb-9d9b-64299ce8dbb9', 'Pepper - Gypsy Pepper', 'Electronics');
+insert into ITEM (ID, NAME, CATEGORY) values ('3705a753-0c71-45c0-95b7-b1ba260a6fe4', 'Chocolate - Sugar Free Semi Choc', 'Kids');
+insert into ITEM (ID, NAME, CATEGORY) values ('15a946ef-49d7-4cd5-9bab-30faa61b2ba2', 'Lid Tray - 16in Dome', 'Electronics');
+insert into ITEM (ID, NAME, CATEGORY) values ('d861c2d3-a798-45e0-8518-a992bd00151b', 'Beans - Black Bean, Preserved', 'Grocery');
+insert into ITEM (ID, NAME, CATEGORY) values ('e752ac28-9645-499a-b546-83420047f755', 'Bandage - Flexible Neon', 'Beauty');
+insert into ITEM (ID, NAME, CATEGORY) values ('7efbd403-81ef-481d-a195-461c9b9ff8e1', 'Chocolate - Semi Sweet, Calets', 'Electronics');
+insert into ITEM (ID, NAME, CATEGORY) values ('e9e70acc-0e0d-41a1-baa8-92a28e9d4395', 'Nantucket - Carrot Orange', 'Computers');
+insert into ITEM (ID, NAME, CATEGORY) values ('cffa9e1f-a64a-4f35-a900-84ba128fd0b3', 'Pepperoni Slices', 'Books');
+insert into ITEM (ID, NAME, CATEGORY) values ('837581eb-e451-4e01-aa5a-2181a9d5074a', 'Coffee - Almond Amaretto', 'Health');
+insert into ITEM (ID, NAME, CATEGORY) values ('a80b6dcd-be30-4f17-b649-53d219cb8d85', 'Galliano', 'Kids');
+insert into ITEM (ID, NAME, CATEGORY) values ('fec681ea-61e9-4940-b9c2-e4f270af1957', 'Thyme - Dried', 'Shoes');
+insert into ITEM (ID, NAME, CATEGORY) values ('ef2da0cd-ebce-44c0-ba94-05ca43de04a8', 'Pepper - Orange', 'Jewelery');
+insert into ITEM (ID, NAME, CATEGORY) values ('2ece08a7-16cc-46a2-9e86-1f6dd4d529da', 'Mushroom - Enoki, Fresh', 'Music');
+insert into ITEM (ID, NAME, CATEGORY) values ('65d9a8e8-5e4e-4197-a9bd-07c79d982d06', 'Wine - White, Ej', 'Music');
+insert into ITEM (ID, NAME, CATEGORY) values ('2bf79561-f4f7-49a2-9ac2-7912ca1b4f68', 'Creme De Menth - White', 'Jewelery');
+insert into ITEM (ID, NAME, CATEGORY) values ('ba2e5940-1dbb-4e3d-872e-460c9d1063ef', 'Oil - Safflower', 'Home');
+insert into ITEM (ID, NAME, CATEGORY) values ('003fbf7c-0b02-4efd-9f9a-d3aa6642676f', 'Lamb - Whole Head Off', 'Jewelery');
+insert into ITEM (ID, NAME, CATEGORY) values ('08bee330-60c3-4717-b4c6-206c801993f7', 'Cheese Cloth No 100', 'Jewelery');
+insert into ITEM (ID, NAME, CATEGORY) values ('c7643497-02dc-4e23-9e37-2a84b786a3c5', 'Cheese - Pied De Vents', 'Movies');
+insert into ITEM (ID, NAME, CATEGORY) values ('399c2f17-89f1-4a62-b312-a60e1eace8f2', 'Daves Island Stinger', 'Jewelery');
+insert into ITEM (ID, NAME, CATEGORY) values ('d766880a-ad94-4b95-b4e4-2bc002e305d9', 'Beets', 'Health');
+insert into ITEM (ID, NAME, CATEGORY) values ('b4625ce5-3510-432b-acc5-f38e9fa17d4d', 'Cheese - Shred Cheddar / Mozza', 'Beauty');
+insert into ITEM (ID, NAME, CATEGORY) values ('a0eacda5-95cd-4ff9-9587-1c1b150c4525', 'Truffle - Whole Black Peeled', 'Electronics');
+insert into ITEM (ID, NAME, CATEGORY) values ('8a93ffc0-52c6-4dcc-90ce-7fdf4a847bcb', 'Cornflakes', 'Shoes');
+insert into ITEM (ID, NAME, CATEGORY) values ('09ed3e0d-108a-4f9c-b385-e5226ba88c30', 'Lychee', 'Outdoors');
+insert into ITEM (ID, NAME, CATEGORY) values ('528a3518-ad22-4d60-a38b-9d4f6930f4b3', 'Oven Mitt - 13 Inch', 'Industrial');
+insert into ITEM (ID, NAME, CATEGORY) values ('266ec4de-2f82-439f-81f9-f331a077d33c', 'Napkin - Cocktail,beige 2 - Ply', 'Clothing');
+insert into ITEM (ID, NAME, CATEGORY) values ('6469601c-01be-415e-941f-f05334b6e792', 'Yucca', 'Industrial');
+insert into ITEM (ID, NAME, CATEGORY) values ('77dc73cd-7474-41bc-bfbb-3ff4f464dd28', 'Tea - Earl Grey', 'Home');
+insert into ITEM (ID, NAME, CATEGORY) values ('820fe799-7323-4c48-834b-f07bca6f4cd0', 'Appetizer - Southwestern', 'Outdoors');
+insert into ITEM (ID, NAME, CATEGORY) values ('4305316f-6640-4daa-b3c2-6300ac5f2d1f', 'Sauce - Marinara', 'Automotive');
+insert into ITEM (ID, NAME, CATEGORY) values ('ed8af4cc-5c3d-47a1-adb8-e7cda9b9b493', 'Cookie Chocolate Chip With', 'Automotive');
+insert into ITEM (ID, NAME, CATEGORY) values ('b3b7fabe-080a-41bc-ab0a-74e7e92b3310', 'Bread - English Muffin', 'Tools');
+insert into ITEM (ID, NAME, CATEGORY) values ('c6a2025c-69c6-4e56-82af-e9c4e83c683e', 'Macaroons - Homestyle Two Bit', 'Jewelery');
+insert into ITEM (ID, NAME, CATEGORY) values ('b99109c3-3950-4dc9-b957-3335a6e03585', 'Wine - Jackson Triggs Okonagan', 'Books');
+insert into ITEM (ID, NAME, CATEGORY) values ('08785cc0-becd-4d98-93b2-58236d24229b', 'Glove - Cutting', 'Sports');
+insert into ITEM (ID, NAME, CATEGORY) values ('e7d2d029-eb1e-4c85-91a5-2d8db3ccc9b1', 'Creme De Cacao White', 'Grocery');
+insert into ITEM (ID, NAME, CATEGORY) values ('bb0f0c95-b5f2-4345-94fe-2145cfd08cff', 'Lettuce - Romaine, Heart', 'Automotive');
+insert into ITEM (ID, NAME, CATEGORY) values ('6487f7f5-b51b-4fe1-bc27-95e502e9e03b', 'Bread - Pain Au Liat X12', 'Computers');
+insert into ITEM (ID, NAME, CATEGORY) values ('8639c591-3c2d-45f1-8f3b-d34060715da6', 'Bread - Kimel Stick Poly', 'Health');
+insert into ITEM (ID, NAME, CATEGORY) values ('c6533f26-aaf7-49b2-9836-8ad6a70ede1f', 'Chicken - Soup Base', 'Shoes');
+insert into ITEM (ID, NAME, CATEGORY) values ('3d7ffd52-5821-4590-b09a-bbe52a1fd292', 'Egg - Salad Premix', 'Tools');
+insert into ITEM (ID, NAME, CATEGORY) values ('275af595-77ee-4248-b7c4-af9b4cd3d39b', 'Bagelers - Cinn / Brown', 'Games');
+insert into ITEM (ID, NAME, CATEGORY) values ('7a16fb27-1ede-404b-acf3-9e60adc3d36d', 'Snapple - Iced Tea Peach', 'Health');
+insert into ITEM (ID, NAME, CATEGORY) values ('14b51927-14a8-4f37-8b21-2bf028c075ef', 'Onions - Red Pearl', 'Garden');
+insert into ITEM (ID, NAME, CATEGORY) values ('496013db-6619-4fd1-b93d-2a23187378d4', 'Sobe - Liz Blizz', 'Shoes');
+insert into ITEM (ID, NAME, CATEGORY) values ('e2f90bf7-7348-4b4a-9578-ac13709556fa', 'Truffle - Peelings', 'Health');
+insert into ITEM (ID, NAME, CATEGORY) values ('84aecfd5-3c67-421e-8480-b589a9270f71', 'Almonds Ground Blanched', 'Baby');
+insert into ITEM (ID, NAME, CATEGORY) values ('b4585d56-21a3-42db-95e0-4fd3ed769c39', 'Veal - Tenderloin, Untrimmed', 'Tools');
+insert into ITEM (ID, NAME, CATEGORY) values ('76cc0fc1-953e-4646-86fc-f4a5b183eccf', 'Eggplant - Baby', 'Beauty');
+insert into ITEM (ID, NAME, CATEGORY) values ('f0cc52df-1457-488e-8982-8e975f3d1afb', 'Lettuce - Belgian Endive', 'Industrial');
+insert into ITEM (ID, NAME, CATEGORY) values ('df30d08b-7ee3-49f6-95fe-f02fab08a7ff', 'Coffee - 10oz Cup 92961', 'Garden');
+insert into ITEM (ID, NAME, CATEGORY) values ('861cb11a-ef9c-4ad9-bc5f-d291c551c089', 'The Pop Shoppe Pinapple', 'Clothing');
+insert into ITEM (ID, NAME, CATEGORY) values ('3756d29b-632c-441c-a0bd-0f9e33c59f5c', 'Table Cloth 54x54 Colour', 'Computers');
+insert into ITEM (ID, NAME, CATEGORY) values ('2f2c0235-74b0-472e-a3f3-594f68801fb5', 'Creme De Menthe Green', 'Shoes');
+insert into ITEM (ID, NAME, CATEGORY) values ('71b0b062-978c-4f93-ad73-06f582554a7f', 'Thermometer Digital', 'Sports');
+insert into ITEM (ID, NAME, CATEGORY) values ('a29636ed-0113-493b-970c-fbc0eaaad870', 'Rice - 7 Grain Blend', 'Sports');
+insert into ITEM (ID, NAME, CATEGORY) values ('67d4f02c-422c-4d51-a102-e0b204a8bda7', 'Cheese - Valancey', 'Garden');
+insert into ITEM (ID, NAME, CATEGORY) values ('ea41d4af-961b-4ce1-915e-8b03623ae3c8', 'The Pop Shoppe - Root Beer', 'Clothing');
+insert into ITEM (ID, NAME, CATEGORY) values ('bb2e6575-c9be-4609-8ade-c1764910c839', 'Crab - Meat', 'Garden');
+insert into ITEM (ID, NAME, CATEGORY) values ('f3b5bf87-a005-48f3-8307-54a6c6182696', 'Wine - White, Antinore Orvieto', 'Electronics');
+insert into ITEM (ID, NAME, CATEGORY) values ('cbed0661-cb2d-4386-a82e-bbdb34b6443e', 'Mix Pina Colada', 'Games');
+insert into ITEM (ID, NAME, CATEGORY) values ('2fbe4f60-e81e-49ef-a109-3f41947601a5', 'Energy Drink - Redbull 355ml', 'Baby');
+insert into ITEM (ID, NAME, CATEGORY) values ('ecd0bacd-b7a2-4338-9eb5-df4facc691e3', 'Gingerale - Diet - Schweppes', 'Movies');
+insert into ITEM (ID, NAME, CATEGORY) values ('42bffcaa-ab7c-4dfc-b208-ba68939818c0', 'Jagermeister', 'Industrial');
+insert into ITEM (ID, NAME, CATEGORY) values ('bf3ca6f1-8ac4-402c-8e0f-fcbfde6c4bd2', 'Cakes Assorted', 'Home');
+insert into ITEM (ID, NAME, CATEGORY) values ('c7027cdc-6b6c-494b-9697-e57717e9ac7b', 'Beef - Shank', 'Music');
+insert into ITEM (ID, NAME, CATEGORY) values ('8ecbfecc-e12a-4de8-ba48-3f0e84c3cf05', 'Sauce - Hp', 'Music');
+insert into ITEM (ID, NAME, CATEGORY) values ('33143ca2-c8d7-4bac-90c8-9a3203225502', 'Tea - Black Currant', 'Health');
+insert into ITEM (ID, NAME, CATEGORY) values ('af986425-2354-4c62-8f8e-ee06d225786a', 'Squid - U - 10 Thailand', 'Grocery');
+insert into ITEM (ID, NAME, CATEGORY) values ('1f6ce17e-dc2d-4867-ba19-39e09140596d', 'Tea - Herbal I Love Lemon', 'Automotive');
+insert into ITEM (ID, NAME, CATEGORY) values ('62e30fc6-3076-453d-bc55-2dc32977eee1', 'Asparagus - White, Canned', 'Shoes');

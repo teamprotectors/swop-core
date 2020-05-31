@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-http
+spec:
+  selector:
+    matchLabels:
+      app: users-http
+  template:
+    metadata:
+      labels:
+        app: users-http
+    spec:
+      containers:
+        - name: users-http
+          image: registry.gitlab.com/gsissa/image-registry-repo/swop-users:0.1.0-SNAPSHOT
+      imagePullSecrets:
+        - name: gitlab-registry
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-http-svc
+spec:
+  selector:
+    app: users-http
+  ports:
+    - protocol: TCP
+      port: 8081
+      

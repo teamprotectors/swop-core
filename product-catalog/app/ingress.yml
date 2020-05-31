@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: swop-app-svc
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP
+  selector:
+    app: swop-app
+  ports:
+  - protocol: TCP
+    port: 80
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-catalog-http-svc
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP
+  selector:
+    app: product-catalog-http
+  ports:
+    - protocol: TCP
+      port: 8085
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: swop-cart-http-svc
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  selector:
+    app: swop-cart-http
+  ports:
+    - protocol: TCP
+      port: 8086
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-http-svc
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+spec:
+  type: ClusterIP
+  selector:
+    app: users-http
+  ports:
+    - protocol: TCP
+      port: 8081

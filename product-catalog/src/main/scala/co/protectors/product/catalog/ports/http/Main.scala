@@ -40,8 +40,5 @@ object AppResources {
                  .bindHttp(config.http.port.number, config.http.host.ip)
                  .withHttpApp(httpApp.orNotFound)
                  .resource
-    } yield {
-      println(s"server started on: http://${config.http.host.ip}:${config.http.port.number}")
-      server
-    }
+    } yield server
 }

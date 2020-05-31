@@ -36,19 +36,22 @@ lazy val users = project
   .configs(IntegrationTest)
   .settings(
     commonSettings,
+    dockerExposedPorts := Seq(8081),
     libraryDependencies ++= Dependencies.test,
     mainClass in Compile := Option("co.protectors.user.ports.http.Main"),
     name += "-users",
     testSettings
   )
-
+  .enablePlugins(JavaAppPackaging)
 
 lazy val `swop-cart` = project
   .configs(IntegrationTest)
   .settings(
     commonSettings,
+    dockerExposedPorts := Seq(8086),
     libraryDependencies ++= Dependencies.test,
     mainClass in Compile := Option("co.protectors.swop.cart.ports.Main"),
     name += "-cart",
     testSettings
   )
+  .enablePlugins(JavaAppPackaging)
