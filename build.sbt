@@ -48,7 +48,7 @@ lazy val `swop-cart` = project
   .settings(
     commonSettings,
     libraryDependencies ++= Dependencies.test,
-    mainClass in Compile := Option("co.protectors.Main"),
+    mainClass in Compile := Option("co.protectors.swop.cart.ports.Main"),
     name += "-cart",
     testSettings
   )
