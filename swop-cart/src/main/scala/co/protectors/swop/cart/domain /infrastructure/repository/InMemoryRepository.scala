@@ -30,30 +30,39 @@ class InMemoryRepository [F[_]: Effect](xa: Transactor[F]) extends CartShopAlg[F
   override def getByID(id: UUID): OptionT[F, CartShop] =
     OptionT(
       CartShopSQL.getById(id).option.transact(xa).flatMap(
-        mCart => mCart.traverse{
+        mCart => mCart.traverse {
           cart =>
             ItemSQL.getByIdCart(id).transact(xa).flatMap {
               item =>
                 item.flatTraverse(itemResult => ItemWishSQL.getByIdItem(itemResult.idItem))
                   .transact(xa)
-                    .map( wish => CartShop(id,cart.idUser,ItemRow.toDomainList(item,wish).toList))
+                  .map(wish => CartShop(id, cart.idUser, ItemRow.toDomainList(item, wish).toList))
             }
         })
     )
 
-  override def getAll: F[List[CartShop]] = ???
 
   def saveItems(items: List[ItemRow]): doobie.ConnectionIO[List[Int]] =
-    items.traverse{ itemRow =>
+    items.traverse { itemRow =>
       ItemSQL.insert(itemRow).run
     }
 
-  def saveItemWish (items: List[ItemWishRow]): doobie.ConnectionIO[List[Int]] =
-    items.traverse{ itemRow =>
+  def saveItemWish(items: List[ItemWishRow]): doobie.ConnectionIO[List[Int]] =
+    items.traverse { itemRow =>
       ItemWishSQL.insert(itemRow).run
     }
 
-
+  override def getAll: F[List[CartShop]] =
+    CartShopSQL.getAll.transact(xa).flatMap(
+      mCart => mCart.traverse {
+        cart =>
+          ItemSQL.getByIdCart(cart.id).transact(xa).flatMap {
+            item =>
+              item.flatTraverse(itemResult => ItemWishSQL.getByIdItem(itemResult.idItem))
+                .transact(xa)
+                .map(wish => CartShop(cart.id, cart.idUser, ItemRow.toDomainList(item, wish).toList))
+          }
+      })
 }
 
 object InMemoryRepository {

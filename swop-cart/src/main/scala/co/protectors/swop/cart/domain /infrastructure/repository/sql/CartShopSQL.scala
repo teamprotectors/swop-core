@@ -19,4 +19,8 @@ object CartShopSQL {
     sql"""SELECT idCart,idUser from CART_SHOP where idCart=$id""".queryWithLogHandler
       [CartShopRow](jdkLogHandler)
 
+  def getByUserID(id: UUID): doobie.Query0[CartShopRow] =
+    sql"""SELECT idCart,idUser from CART_SHOP where idUser=$id""".queryWithLogHandler
+      [CartShopRow](jdkLogHandler)
+
 }
