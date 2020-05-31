@@ -6,30 +6,19 @@ CREATE TABLE IF NOT EXISTS ITEM
     PRIMARY KEY (ID)
 );
 
-
 INSERT INTO ITEM (ID, NAME, CATEGORY)
 VALUES ('112e1e72-e408-4935-a040-b4baf2562fe8', 'item-sample', 'Food');
-
-INSERT INTO ITEM (ID, NAME, CATEGORY)
-VALUES ('112e1e72-e408-4935-a040-b4baf2562fe8', 'item-sample', 'Food');
-
 INSERT INTO ITEM (ID, NAME, CATEGORY)
 VALUES ('1108bcf0-f19e-47c7-87a7-efa9344447b4', 'Pan Integral', 'Food');
-
 INSERT INTO ITEM (ID, NAME, CATEGORY)
 VALUES ('d3f9eb5c-8309-4ff3-9edb-b43db2892deb', 'Lentejas', 'Food');
-
 INSERT INTO ITEM (ID, NAME, CATEGORY)
 VALUES ('2615ac1d-d9be-4ab8-abc6-e6d6383c8399', 'Salmon', 'Food');
-
 INSERT INTO ITEM (ID, NAME, CATEGORY)
 VALUES ('4fbf834e-e3d5-4a45-a7b7-6e754f552daa', 'papel para baño en rollo familia', 'Food');
-
 INSERT INTO ITEM (ID, NAME, CATEGORY)
 VALUES ('65785911-4bcd-4c95-af1a-4869da687e82', 'colgate sensitive pro alivio', 'Aseo');
-
 INSERT INTO ITEM (ID, NAME, CATEGORY)
 VALUES ('65785911-4bcd-4c95-af1a-4869da687e93', 'Jabon baño', 'Aseo');
-
 INSERT INTO ITEM (ID, NAME, CATEGORY)
 VALUES ('65785911-4bcd-4c95-af1a-4869da687e94', 'Alcohol', 'Aseo');
