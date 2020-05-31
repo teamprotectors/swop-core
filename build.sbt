@@ -41,3 +41,14 @@ lazy val users = project
     name += "-users",
     testSettings
   )
+
+
+lazy val `swop-cart` = project
+  .configs(IntegrationTest)
+  .settings(
+    commonSettings,
+    libraryDependencies ++= Dependencies.test,
+    mainClass in Compile := Option("co.protectors.Main"),
+    name += "-cart",
+    testSettings
+  )
