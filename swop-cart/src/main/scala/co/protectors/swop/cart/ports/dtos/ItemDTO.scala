@@ -13,6 +13,7 @@ case class ItemDTO (
                      id:Option[UUID],
                      name: String,
                      quantity: Int,
+                     description: Option[String],
                      isInterchangeable: Boolean,
                      requestDate: Option[ZonedDateTime],
                      showDate: Option[ZonedDateTime],

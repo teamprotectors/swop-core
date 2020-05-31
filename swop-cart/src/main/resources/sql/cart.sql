@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS ITEM_CART (
   isInterchangeable boolean ,
   requestDate TIMESTAMP,
   showDate TIMESTAMP,
-  idCart UUID
+  idCart UUID,
+  description varchar (100) NULL
 );
 
 CREATE TABLE IF NOT EXISTS ITEM_WISH (

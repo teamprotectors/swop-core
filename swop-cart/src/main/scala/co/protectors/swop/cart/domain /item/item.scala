@@ -10,7 +10,9 @@ case class Item (
                  isInterchangeable: Boolean,
                  requestDate: ZonedDateTime,
                  showDate: ZonedDateTime,
-                 wishItems: List[ItemToChange])
+                 wishItems: List[ItemToChange],
+                 description: Option[String]
+                )
 
 final case class ItemToChange(
                                id: UUID,

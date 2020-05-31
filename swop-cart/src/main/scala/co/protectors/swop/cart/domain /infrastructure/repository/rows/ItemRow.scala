@@ -12,7 +12,8 @@ case class ItemRow (
                      isInterchangeable: Boolean,
                      requestDate: ZonedDateTime,
                      showDate: ZonedDateTime,
-                     idCart: UUID
+                     idCart: UUID,
+                     description : Option[String]
                    )
 
 object ItemRow  {
@@ -25,7 +26,8 @@ object ItemRow  {
         isInterchangeable = item.isInterchangeable,
         requestDate = item.requestDate,
         showDate = item.showDate,
-        idCart = cartShop.id
+        idCart = cartShop.id,
+        description = item.description
     ))
 
   def toDomainList (items: List[ItemRow], itemWish : List[ItemWishRow]): Seq[Item] = {
@@ -38,7 +40,8 @@ object ItemRow  {
           isInterchangeable = item.isInterchangeable,
           requestDate = item.requestDate,
           showDate = item.showDate,
-          wishItems = itemWish.map(ItemWishRow.toDomain(_))
+          wishItems = itemWish.map(ItemWishRow.toDomain(_)),
+          description = item.description
         )
     )
   }

@@ -10,7 +10,9 @@ import io.circe.{Decoder, Encoder}
 import org.http4s.circe.{jsonEncoderOf, jsonOf}
 import org.http4s.{EntityDecoder, EntityEncoder}
 
-case class CartShopDTO (idCart: Option[UUID], idUser: String, items: List[ItemDTO])
+case class CartShopDTO (idCart: Option[UUID],
+                        idUser: String,
+                        items: List[ItemDTO])
 
 object CartShopDTO {
   def apply(dto: CartShopDTO): CartShop = {
@@ -25,6 +27,7 @@ object CartShopDTO {
           isInterchangeable = itemDTO.isInterchangeable,
           requestDate = ZonedDateTime.now(),
           showDate = ZonedDateTime.now(),
+          description = itemDTO.description,
           wishItems = itemDTO.wishItems.map(wishItems =>
             ItemToChange(
               id = wishItems.id,
@@ -43,6 +46,7 @@ object CartShopDTO {
           quantity = domainItems.quantity,
           isInterchangeable = domainItems.isInterchangeable,
           requestDate = Some(domainItems.requestDate),
+          description = domainItems.description,
           showDate = Some(domainItems.showDate),
           wishItems = domainItems.wishItems.map(wish =>
             ItemWishDTO(
@@ -58,5 +62,8 @@ object CartShopDTO {
     jsonOf[F, CartShopDTO]
   implicit def cartShopEncoderF[F[_]: Sync]: EntityEncoder[F, CartShopDTO] =
     jsonEncoderOf[F, CartShopDTO]
+  implicit def cartShopEncoderFList[F[_]: Sync]: EntityEncoder[F, List[CartShopDTO]] =
+    jsonEncoderOf[F, List[CartShopDTO]]
+
 
 }

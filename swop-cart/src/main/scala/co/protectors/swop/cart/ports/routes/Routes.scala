@@ -26,6 +26,12 @@
           CartShopAlg[F].getByID(UUID.fromString(idCart)).value map (domain =>
               domain.fold(CartNotFound("NotFound").raiseError[F, CartShopDTO])(
                 cart => CartShopDTO.fromDomain(cart).pure[F]) ) flatMap(Ok(_))
+
+        case GET -> Root  =>
+          CartShopAlg[F].getAll.flatMap(
+            domain =>
+              Ok(domain.map(cart =>
+                CartShopDTO.fromDomain(cart))))
       }
   }
 
