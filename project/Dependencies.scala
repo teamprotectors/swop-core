@@ -12,6 +12,7 @@ object Versions {
   lazy val doobie      = "0.8.8"
   lazy val henkan      = "0.6.4"
   lazy val http4s      = "0.21.3"
+  lazy val logback      =  "1.2.3"
 
   object Dependencies {
     lazy val common: Seq[ModuleID] = Seq(
@@ -32,7 +33,8 @@ object Versions {
       "org.http4s"     %% "http4s-blaze-server" % Versions.http4s withSources () withJavadoc (),
       "org.http4s"     %% "http4s-dsl"          % Versions.http4s withSources () withJavadoc (),
       "org.http4s"     %% "http4s-circe"        % Versions.http4s,
-      "org.http4s"     %% "http4s-blaze-client" % Versions.http4s
+      "org.http4s"     %% "http4s-blaze-client" % Versions.http4s,
+      "ch.qos.logback" % "logback-classic"      % Versions.logback
     )
 
     lazy val test: Seq[ModuleID] = Seq(
