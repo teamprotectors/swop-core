@@ -9,22 +9,19 @@ import doobie.implicits.javatime._
 
 object ItemSQL {
   def insert(cartShop: ItemRow): doobie.Update0 =
-    sql"""INSERT INTO ITEM_CART (id_item, name, quantity,
-         | is_interchangeable, request_date, show_date, id_cart)
-         | VALUES(${cartShop.idItem},${cartShop.name},
-         | ${cartShop.quantity},${cartShop.isInterchangeable},${cartShop.requestDate},
-         | ${cartShop.showDate}
-         | ${cartShop.idCart})""".update
+    sql"""INSERT INTO ITEM_CART (idItem, name, quantity, isInterchangeable, requestDate, showDate, idCart) VALUES(${cartShop.idItem},${cartShop.name},
+          ${cartShop.quantity},${cartShop.isInterchangeable},${cartShop.requestDate},
+          ${cartShop.showDate},
+          ${cartShop.idCart})""".update
 
   def getByIdCart(idCart: UUID): doobie.ConnectionIO[List[ItemRow]] =
-    sql"""SELECT id_item, name, quantity, is_interchangeable,
-         |request_date, show_date,
-         |id_cart from ITEM_CART WHERE id_cart = $idCart"""
+    sql"""SELECT idItem, name, quantity, isInterchangeable,requestDate, showDate,
+          idCart FROM ITEM_CART WHERE idCart = $idCart"""
       .stripMargin.query[ItemRow].to[List]
 
   def getAll: doobie.ConnectionIO[List[ItemRow]] =
-    sql"""SELECT id_item, name, quantity,
-         |is_interchangeable, request_date, show_date,id_cart from  ITEM_CART""".stripMargin.query[ItemRow].to[List]
+    sql"""SELECT idItem, name, quantity,
+         isInterchangeable, requestDate, showDate, idCart FROM  ITEM_CART""".stripMargin.query[ItemRow].to[List]
 
 }
 

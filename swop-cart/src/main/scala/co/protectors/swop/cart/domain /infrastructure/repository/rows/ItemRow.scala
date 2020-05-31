@@ -25,7 +25,7 @@ object ItemRow  {
         isInterchangeable = item.isInterchangeable,
         requestDate = item.requestDate,
         showDate = item.showDate,
-        idCart = cartShop.idCart
+        idCart = cartShop.id
     ))
 
   def toDomainList (items: List[ItemRow], itemWish : List[ItemWishRow]): Seq[Item] = {

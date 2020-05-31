@@ -1,12 +1,19 @@
 package co.protectors.swop.cart.domain .adapters
 
-import co.protectors.swop.cart.domain.item.CartShop
+import cats.effect.Effect
+import co.protectors.swop.cart.domain.infrastructure.repository.InMemoryRepository
 import co.protectors.swop.cart.domain.item.algebras.CartShopAlg
+import doobie.util.transactor.Transactor
 
-final class LiveItemRepository[F[_]: CartShopAlg] private {
-  def create(item: CartShop): F[CartShop] = CartShopAlg[F].sendCart(item)
+
+trait Repository[F[_]] {
+  def itemRepository: CartShopAlg[F]
+}
+
+final class LiveItemRepository[F[_]](repo: CartShopAlg[F]) extends Repository[F]  {
+  override def itemRepository: CartShopAlg[F] =  repo
 }
 
 object LiveItemRepository {
-  def apply[F[_]: CartShopAlg]: LiveItemRepository[F] = new LiveItemRepository[F]
+  def apply[F[_]: Effect](transactor : Transactor[F]): LiveItemRepository[F] = new LiveItemRepository[F](InMemoryRepository[F](transactor))
 }
