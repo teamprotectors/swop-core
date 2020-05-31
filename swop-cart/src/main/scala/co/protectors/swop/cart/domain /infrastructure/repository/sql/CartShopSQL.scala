@@ -10,7 +10,7 @@ import doobie.util.log.LogHandler.jdkLogHandler
 object CartShopSQL {
   def insert(cartShop: CartShopRow): doobie.Update0 =
     sql"""INSERT INTO CART_SHOP (idCart, idUser)
-         | VALUES(${cartShop.id},${cartShop.idUser}) ON CONFLICT (idCart) DO NOTHING""".update
+          VALUES(${cartShop.id},${cartShop.idUser})""".update
 
   def getAll: doobie.ConnectionIO[List[CartShopRow]] =
     sql"""SELECT idCart,idUser from CART_SHOP""".stripMargin.query[CartShopRow].to[List]

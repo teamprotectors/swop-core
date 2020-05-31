@@ -21,4 +21,4 @@ services:
 | Product Catalog | http://127.0.0.1/products    | GET  | Returns all items saved in product catalog database |
 | Product Catalog | http://127.0.0.1/products    | POST | Save a new item in product catalog database         |
 | Cart Shop       | http://127.0.0.1/cart/idcart | GET  | Returns a cart shop by id                           |
-| Cart Shop       | http://127.0.0.1/products    | POST | Save a new cart shop                                |
+| Cart Shop       | http://127.0.0.1/cart    | POST | Save a new cart shop                                |
